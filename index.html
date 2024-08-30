@@ -3,31 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benjamin Bailey - Home</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Benjamin Bailey - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #intro {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
+                <li><a href="#about" onclick="navigateTo('about')">About</a></li>
+                <li><a href="#experience" onclick="navigateTo('experience')">Experience</a></li>
+                <li><a href="#education" onclick="navigateTo('education')">Education</a></li>
+                <li><a href="#portfolio" onclick="navigateTo('portfolio')">Portfolio</a></li>
+                <li><a href="#contact" onclick="navigateTo('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
+    
     <main>
-        <section id="intro">
-            <h1>Benjamin Bailey</h1>
-            <p>Mechanical and Energy Engineering Student</p>
-            <p><a href="Resume 2022.pdf" download>Download Resume</a></p>
+        <section id="home" class="content">
+            <div id="intro">
+                <h1>Benjamin Bailey</h1>
+                <p>Mechanical and Energy Engineering Student</p>
+                <p><a href="Resume 2022.pdf" download>Download Resume</a></p>
+            </div>
+        </section>
+        
+        <section id="about" class="content" style="display: none;">
+            <h1 class="section-title">About Me</h1>
+            <p>I am a Mechanical and Energy Engineering student with a passion for solving complex problems and designing innovative solutions. With over a decade of working experience, I have developed excellent work ethic, leadership skills, and the ability to collaborate on different team projects.</p>
+        </section>
+
+        <section id="experience" class="content" style="display: none;">
+            <h1 class="section-title">Experience</h1>
+            <p><strong>Field Tech Supervisor at MasTec Advanced Technologies (July 2015 - May 2019):</strong> Responsible for data compilation and auditing, technician training, customer relations, and safety checks.</p>
+            <p><strong>Field Supervisor at Nitro-Lift Technologies, LLC (September 2013 - March 2015):</strong> Managed operations of membrane nitrogen units in oil wells and ensured safety and efficiency.</p>
+            <p><strong>Lead Unit Operator [Membrane Nitrogen] at Nitro-Lift Technologies, LLC (March 2009 - September 2013):</strong> Oversaw unit operations, troubleshooting, and repair of on-site equipment.</p>
+            <p><strong>Owner and Operator at BKB Power Washing, LLC (April 2005 - March 2012):</strong> Managed all aspects of business operations, including finance, project estimates, and client communication.</p>
+        </section>
+
+        <section id="education" class="content" style="display: none;">
+            <h1 class="section-title">Education</h1>
+            <p><strong>Bachelor of Science in Mechanical and Energy Engineering</strong> - University of North Texas (Expected Fall 2023)</p>
+            <p><strong>Associate of Applied Science</strong> - Completed 2019</p>
+        </section>
+
+        <section id="portfolio" class="content" style="display: none;">
+            <h1 class="section-title">Portfolio</h1>
+            <p><strong>NASA University Student Launch Initiative:</strong> Managed a high-power rocketry team to design and build a launch vehicle for the NASA USLI competition.</p>
+            <p><strong>UNT Robotics Aerospace Division:</strong> Co-founded and expanded the UNT Robotics Aerospace Division to include sport rocketry and remote control planes and drones.</p>
+        </section>
+
+        <section id="contact" class="content" style="display: none;">
+            <h1 class="section-title">Contact</h1>
+            <p>Email: <a href="mailto:BenjaminBailey@my.unt.edu">BenjaminBailey@my.unt.edu</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/ben-bailey" target="_blank">linkedin.com/in/ben-bailey</a></p>
         </section>
     </main>
+    
     <footer>
         <p>&copy; 2024 Benjamin Bailey</p>
     </footer>
+
+    <script>
+        function navigateTo(section) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(sec => sec.style.display = 'none');
+            
+            document.getElementById(section).style.display = 'block';
+        }
+        
+        // Set the default section to display on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            navigateTo('home');
+        });
+    </script>
 </body>
 </html>
