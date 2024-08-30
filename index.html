@@ -17,6 +17,10 @@
             background-color: #333;
             color: white;
             padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         nav ul {
@@ -36,7 +40,20 @@
         }
 
         main {
-            padding: 20px;
+            padding-top: 60px; /* To account for the fixed header */
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
         }
 
         footer {
@@ -44,26 +61,11 @@
             padding: 10px;
             background-color: #333;
             color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: 20px;
         }
 
         #intro {
             text-align: center;
-            margin-top: 50px;
-        }
-
-        .section-title {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #333;
-        }
-
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
         }
     </style>
 </head>
@@ -71,18 +73,18 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
-                <li><a href="#about" onclick="navigateTo('about')">About</a></li>
-                <li><a href="#experience" onclick="navigateTo('experience')">Experience</a></li>
-                <li><a href="#education" onclick="navigateTo('education')">Education</a></li>
-                <li><a href="#portfolio" onclick="navigateTo('portfolio')">Portfolio</a></li>
-                <li><a href="#contact" onclick="navigateTo('contact')">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <section id="home" class="content">
+        <section id="home">
             <div id="intro">
                 <h1>Benjamin Bailey</h1>
                 <p>Mechanical and Energy Engineering Student</p>
@@ -90,12 +92,12 @@
             </div>
         </section>
         
-        <section id="about" class="content" style="display: none;">
+        <section id="about">
             <h1 class="section-title">About Me</h1>
             <p>I am a Mechanical and Energy Engineering student with a passion for solving complex problems and designing innovative solutions. With over a decade of working experience, I have developed excellent work ethic, leadership skills, and the ability to collaborate on different team projects.</p>
         </section>
 
-        <section id="experience" class="content" style="display: none;">
+        <section id="experience">
             <h1 class="section-title">Experience</h1>
             <p><strong>Field Tech Supervisor at MasTec Advanced Technologies (July 2015 - May 2019):</strong> Responsible for data compilation and auditing, technician training, customer relations, and safety checks.</p>
             <p><strong>Field Supervisor at Nitro-Lift Technologies, LLC (September 2013 - March 2015):</strong> Managed operations of membrane nitrogen units in oil wells and ensured safety and efficiency.</p>
@@ -103,19 +105,19 @@
             <p><strong>Owner and Operator at BKB Power Washing, LLC (April 2005 - March 2012):</strong> Managed all aspects of business operations, including finance, project estimates, and client communication.</p>
         </section>
 
-        <section id="education" class="content" style="display: none;">
+        <section id="education">
             <h1 class="section-title">Education</h1>
             <p><strong>Bachelor of Science in Mechanical and Energy Engineering</strong> - University of North Texas (Expected Fall 2023)</p>
             <p><strong>Associate of Applied Science</strong> - Completed 2019</p>
         </section>
 
-        <section id="portfolio" class="content" style="display: none;">
+        <section id="portfolio">
             <h1 class="section-title">Portfolio</h1>
             <p><strong>NASA University Student Launch Initiative:</strong> Managed a high-power rocketry team to design and build a launch vehicle for the NASA USLI competition.</p>
             <p><strong>UNT Robotics Aerospace Division:</strong> Co-founded and expanded the UNT Robotics Aerospace Division to include sport rocketry and remote control planes and drones.</p>
         </section>
 
-        <section id="contact" class="content" style="display: none;">
+        <section id="contact">
             <h1 class="section-title">Contact</h1>
             <p>Email: <a href="mailto:BenjaminBailey@my.unt.edu">BenjaminBailey@my.unt.edu</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/ben-bailey" target="_blank">linkedin.com/in/ben-bailey</a></p>
@@ -126,18 +128,5 @@
         <p>&copy; 2024 Benjamin Bailey</p>
     </footer>
 
-    <script>
-        function navigateTo(section) {
-            const sections = document.querySelectorAll('main section');
-            sections.forEach(sec => sec.style.display = 'none');
-            
-            document.getElementById(section).style.display = 'block';
-        }
-        
-        // Set the default section to display on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            navigateTo('home');
-        });
-    </script>
 </body>
 </html>
